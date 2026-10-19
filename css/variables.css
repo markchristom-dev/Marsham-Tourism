@@ -1,0 +1,74 @@
+/* ==========================================================================
+   Marsham Tourism — Design Tokens & CSS Variables
+   Modular stylesheet: shared across all pages
+   ========================================================================== */
+
+:root {
+  /* Core Brand Palette (from specification) */
+  --color-navy-950: #090E1A;
+  --color-navy-900: #0F172A; /* Deep Navy Blue (Primary Brand Color) */
+  --color-navy-800: #1E293B;
+  --color-navy-700: #334155;
+  --color-navy-600: #475569;
+
+  --color-gold-700: #B45309;
+  --color-gold-600: #D97706; /* Gold Accent (Primary Accent Color) */
+  --color-gold-500: #F59E0B;
+  --color-gold-400: #FBBF24;
+  --color-gold-100: #FEF3C7;
+  --color-gold-50:  #FFFBEB;
+
+  --color-white:    #FFFFFF; /* Clean White */
+  --color-slate-50: #F8FAFC;
+  --color-slate-100:#F1F5F9;
+  --color-slate-200:#E2E8F0;
+  --color-slate-300:#CBD5E1;
+  --color-slate-400:#94A3B8;
+  --color-slate-500:#64748B;
+
+  /* Action & Social Colors */
+  --color-whatsapp:       #25D366;
+  --color-whatsapp-dark:  #1DA851;
+  --color-whatsapp-deep:  #128C7E;
+  --color-facebook:       #1877F2;
+  --color-facebook-dark:  #0F5DC2;
+  --color-google-blue:    #4285F4;
+  --color-success:        #10B981;
+  --color-danger:         #EF4444;
+
+  /* Typography */
+  --font-heading: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-body:    'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+
+  /* Layout & Spacing */
+  --container-max: 1240px;
+  --container-pad: 1.25rem;
+  --header-height: 80px;
+
+  /* Border Radius */
+  --radius-sm:   0.5rem;   /* 8px */
+  --radius-md:   0.75rem;  /* 12px */
+  --radius-lg:   1rem;     /* 16px */
+  --radius-xl:   1.5rem;   /* 24px */
+  --radius-full: 9999px;
+
+  /* Shadows */
+  --shadow-xs:   0 1px 2px 0 rgba(15, 23, 42, 0.05);
+  --shadow-sm:   0 4px 6px -1px rgba(15, 23, 42, 0.07), 0 2px 4px -2px rgba(15, 23, 42, 0.05);
+  --shadow-md:   0 10px 25px -5px rgba(15, 23, 42, 0.08), 0 8px 10px -6px rgba(15, 23, 42, 0.04);
+  --shadow-lg:   0 20px 35px -10px rgba(15, 23, 42, 0.14), 0 10px 15px -5px rgba(15, 23, 42, 0.06);
+  --shadow-gold: 0 10px 25px -5px rgba(217, 119, 6, 0.35);
+  --shadow-wa:   0 8px 20px -4px rgba(37, 211, 102, 0.4);
+
+  /* Transitions */
+  --transition-fast: 150ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-base: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-slow: 400ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@media (min-width: 768px) {
+  :root {
+    --container-pad: 2rem;
+    --header-height: 88px;
+  }
+}
