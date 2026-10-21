@@ -55,17 +55,19 @@
       <!-- Header CTA Button & Mobile Menu Trigger -->
       <div class="header-actions">
         <a
-          href="https://wa.me/971564511167?text=Hello%20Marsham%20Tourism!%20I%20would%20like%20to%20inquire%20about%20your%20travel%20services."
-          target="_blank"
-          rel="noopener noreferrer"
-          class="btn btn-whatsapp header-cta"
-          aria-label="Chat with Marsham Tourism on WhatsApp"
+          href="#contact"
+          class="btn btn-gold header-cta"
+          data-quote-cta
+          aria-label="Request a quote from Marsham Tourism"
         >
-          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-            <path d="M12.031 2c-5.516 0-9.999 4.486-9.999 10.004 0 1.766.461 3.489 1.338 5.008L2 22l5.125-1.344c1.468.801 3.123 1.224 4.904 1.224h.004c5.515 0 9.998-4.486 9.998-10.004 0-2.673-1.04-5.186-2.928-7.075C17.215 3.041 14.704 2 12.031 2zm5.825 14.129c-.246.693-1.434 1.326-1.996 1.409-.511.076-1.158.108-1.869-.118-.431-.137-.983-.319-1.693-.626-2.98-1.287-4.926-4.294-5.075-4.493-.149-.199-1.213-1.614-1.213-3.079 0-1.465.768-2.185 1.041-2.484.273-.299.595-.374.793-.374.198 0 .397.002.57.01.183.009.428-.07.669.511.248.597.843 2.063.917 2.212.074.149.124.323.025.522-.099.199-.149.323-.298.497-.149.174-.313.389-.447.522-.149.149-.304.311-.13.609.174.298.771 1.272 1.655 2.061 1.137 1.014 2.096 1.328 2.394 1.477.298.149.471.124.645-.075.174-.199.744-.869.942-1.167.198-.298.397-.249.669-.149.273.099 1.735.819 2.033.968.298.149.496.224.57.348.075.125.075.72-.171 1.413z"/>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+            <polyline points="14 2 14 8 20 8" />
+            <line x1="16" y1="13" x2="8" y2="13" />
+            <line x1="16" y1="17" x2="8" y2="17" />
           </svg>
-          <span class="cta-label-full">WhatsApp Us</span>
-          <span class="cta-label-short">WhatsApp</span>
+          <span class="cta-label-full">Request a Quote</span>
+          <span class="cta-label-short">Get Quote</span>
         </a>
 
         <button
@@ -143,15 +145,17 @@
         <span>Karama, Dubai, United Arab Emirates</span>
       </div>
       <a
-        href="https://wa.me/971564511167?text=Hello%20Marsham%20Tourism!%20I%20would%20like%20to%20inquire%20about%20your%20travel%20services."
-        target="_blank"
-        rel="noopener noreferrer"
-        class="btn btn-whatsapp drawer-cta"
+        href="#contact"
+        class="btn btn-gold drawer-cta"
+        data-quote-cta
       >
-        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-          <path d="M12.031 2c-5.516 0-9.999 4.486-9.999 10.004 0 1.766.461 3.489 1.338 5.008L2 22l5.125-1.344c1.468.801 3.123 1.224 4.904 1.224h.004c5.515 0 9.998-4.486 9.998-10.004 0-2.673-1.04-5.186-2.928-7.075C17.215 3.041 14.704 2 12.031 2zm5.825 14.129c-.246.693-1.434 1.326-1.996 1.409-.511.076-1.158.108-1.869-.118-.431-.137-.983-.319-1.693-.626-2.98-1.287-4.926-4.294-5.075-4.493-.149-.199-1.213-1.614-1.213-3.079 0-1.465.768-2.185 1.041-2.484.273-.299.595-.374.793-.374.198 0 .397.002.57.01.183.009.428-.07.669.511.248.597.843 2.063.917 2.212.074.149.124.323.025.522-.099.199-.149.323-.298.497-.149.174-.313.389-.447.522-.149.149-.304.311-.13.609.174.298.771 1.272 1.655 2.061 1.137 1.014 2.096 1.328 2.394 1.477.298.149.471.124.645-.075.174-.199.744-.869.942-1.167.198-.298.397-.249.669-.149.273.099 1.735.819 2.033.968.298.149.496.224.57.348.075.125.075.72-.171 1.413z"/>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+          <polyline points="14 2 14 8 20 8" />
+          <line x1="16" y1="13" x2="8" y2="13" />
+          <line x1="16" y1="17" x2="8" y2="17" />
         </svg>
-        WhatsApp Us (+971 56 451 1167)
+        Request a Quote
       </a>
     </div>
   </aside>
@@ -182,16 +186,45 @@
     </section>
 
     <!-- ======================================================================
+         2.5 WELCOME STRIP (friendly, minimal copy, one-tap actions)
+         ====================================================================== -->
+    <section class="welcome-strip" id="welcome" aria-labelledby="welcome-title">
+      <div class="container welcome-inner">
+        <h2 class="welcome-title" id="welcome-title">Welcome! Where to next?</h2>
+        <p class="welcome-sub">Tell us your dream trip. We'll take care of the rest.</p>
+
+        <div class="welcome-actions">
+          <a
+            href="https://wa.me/971564511167?text=Hello%20Marsham%20Tourism!%20I%20would%20like%20to%20plan%20a%20trip."
+            target="_blank"
+            rel="noopener noreferrer"
+            class="btn btn-whatsapp"
+          >
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M12.031 2c-5.516 0-9.999 4.486-9.999 10.004 0 1.766.461 3.489 1.338 5.008L2 22l5.125-1.344c1.468.801 3.123 1.224 4.904 1.224h.004c5.515 0 9.998-4.486 9.998-10.004 0-2.673-1.04-5.186-2.928-7.075C17.215 3.041 14.704 2 12.031 2zm5.825 14.129c-.246.693-1.434 1.326-1.996 1.409-.511.076-1.158.108-1.869-.118-.431-.137-.983-.319-1.693-.626-2.98-1.287-4.926-4.294-5.075-4.493-.149-.199-1.213-1.614-1.213-3.079 0-1.465.768-2.185 1.041-2.484.273-.299.595-.374.793-.374.198 0 .397.002.57.01.183.009.428-.07.669.511.248.597.843 2.063.917 2.212.074.149.124.323.025.522-.099.199-.149.323-.298.497-.149.174-.313.389-.447.522-.149.149-.304.311-.13.609.174.298.771 1.272 1.655 2.061 1.137 1.014 2.096 1.328 2.394 1.477.298.149.471.124.645-.075.174-.199.744-.869.942-1.167.198-.298.397-.249.669-.149.273.099 1.735.819 2.033.968.298.149.496.224.57.348.075.125.075.72-.171 1.413z"/>
+            </svg>
+            Chat on WhatsApp
+          </a>
+          <a href="#contact" class="btn btn-gold">Get a Free Quote</a>
+        </div>
+
+        <ul class="welcome-chips" aria-label="Choose a service">
+          <li><a href="#contact" class="welcome-chip" data-select-service="Visa">Visas</a></li>
+          <li><a href="#contact" class="welcome-chip" data-select-service="Flights">Flights</a></li>
+          <li><a href="#contact" class="welcome-chip" data-select-service="Safari">Safaris</a></li>
+          <li><a href="#contact" class="welcome-chip" data-select-service="Full Package">Holidays</a></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ======================================================================
          3. CORE SERVICES GRID (3-Column Grid with 6 Core Offerings)
          ====================================================================== -->
     <section class="section" id="services">
       <div class="container">
         <div class="section-header">
-          <span class="section-eyebrow">Our Core Offerings</span>
-          <h2 class="section-title">Comprehensive Travel &amp; Visa Solutions</h2>
-          <p class="section-subtitle">
-            Everything you need for a stress-free journey under one roof in Karama, Dubai — backed by expert guidance and transparent pricing.
-          </p>
+          <span class="section-eyebrow">What We Do</span>
+          <h2 class="section-title">Everything for Your Trip, Under One Roof</h2>
         </div>
 
         <div class="services-grid">
@@ -205,24 +238,8 @@
                   <path d="M7 21v-2a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v2" />
                 </svg>
               </div>
-              <h3 class="service-title">UAE &amp; Global Visa Assistance</h3>
-              <p class="service-desc">
-                Fast &amp; reliable entry/visit visa processing with complete documentation guidance and status tracking.
-              </p>
-              <ul class="service-features">
-                <li>
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-                  <span>30-Day &amp; 60-Day UAE Tourist Visas</span>
-                </li>
-                <li>
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-                  <span>Schengen, UK, US &amp; Global Visit Visas</span>
-                </li>
-                <li>
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-                  <span>Visa Change &amp; Express Renewal Support</span>
-                </li>
-              </ul>
+              <h3 class="service-title">Visa Assistance</h3>
+              <p class="service-desc">UAE &amp; worldwide visas, handled for you.</p>
             </div>
             <a href="#contact" class="service-card-action" data-select-service="Visa">
               <span>Request Visa Support</span>
@@ -238,24 +255,8 @@
                   <path d="M17.8 19.2 16 11l3.5-3.5C21 6 21.5 4 21 3c-1-.5-3 0-4.5 1.5L13 8 4.8 6.2c-.5-.1-.9.1-1.1.5l-.3.5c-.2.5-.1 1 .3 1.3L9 12l-2 3H4l-1 1 3 2 2 3 1-1v-3l3-2 3.5 5.3c.3.4.8.5 1.3.3l.5-.2c.4-.3.6-.7.5-1.2z" />
                 </svg>
               </div>
-              <h3 class="service-title">Flights &amp; Hotel Bookings</h3>
-              <p class="service-desc">
-                Best rate search across major airlines and hotels worldwide, tailored to your schedule and budget.
-              </p>
-              <ul class="service-features">
-                <li>
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-                  <span>One-Way, Return &amp; Multi-City Air Tickets</span>
-                </li>
-                <li>
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-                  <span>Handpicked 3★ to 5★ Hotel Reservations</span>
-                </li>
-                <li>
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-                  <span>Group Bookings &amp; Date-Change Assistance</span>
-                </li>
-              </ul>
+              <h3 class="service-title">Flights &amp; Hotels</h3>
+              <p class="service-desc">Great fares and stays, booked with ease.</p>
             </div>
             <a href="#contact" class="service-card-action" data-select-service="Flights">
               <span>Check Best Fares</span>
@@ -275,24 +276,8 @@
                   <path d="m6.34 17.66-1.41 1.41" /><path d="m19.07 4.93-1.41 1.41" />
                 </svg>
               </div>
-              <h3 class="service-title">Dubai Desert Safaris &amp; City Tours</h3>
-              <p class="service-desc">
-                Thrill-filled dune bashing, yachts, and excursions curated to showcase the best of the UAE.
-              </p>
-              <ul class="service-features">
-                <li>
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-                  <span>4x4 Dune Bashing, Camel Ride &amp; BBQ Dinner</span>
-                </li>
-                <li>
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-                  <span>Marina Yacht Charters &amp; Dhow Dinner Cruises</span>
-                </li>
-                <li>
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-                  <span>Dubai &amp; Abu Dhabi Iconic Attraction Tickets</span>
-                </li>
-              </ul>
+              <h3 class="service-title">Safaris &amp; Tours</h3>
+              <p class="service-desc">Dunes, yachts and the best of Dubai.</p>
             </div>
             <a href="#contact" class="service-card-action" data-select-service="Safari">
               <span>Book Safari or Tour</span>
@@ -310,24 +295,8 @@
                   <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
                 </svg>
               </div>
-              <h3 class="service-title">Custom Holiday Packages</h3>
-              <p class="service-desc">
-                Tailored itineraries for families, couples, and solo travelers across top global and regional destinations.
-              </p>
-              <ul class="service-features">
-                <li>
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-                  <span>All-Inclusive Flights, Stays &amp; Airport Transfers</span>
-                </li>
-                <li>
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-                  <span>Georgia, Armenia, Azerbaijan, Bali, Europe &amp; More</span>
-                </li>
-                <li>
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-                  <span>Personalized Day-by-Day Sightseeing Plans</span>
-                </li>
-              </ul>
+              <h3 class="service-title">Holiday Packages</h3>
+              <p class="service-desc">Your dream getaway, planned end to end.</p>
             </div>
             <a href="#contact" class="service-card-action" data-select-service="Full Package">
               <span>Plan My Holiday</span>
@@ -344,24 +313,8 @@
                   <path d="m9 12 2 2 4-4" />
                 </svg>
               </div>
-              <h3 class="service-title">Comprehensive Travel Insurance</h3>
-              <p class="service-desc">
-                Complete coverage for peace of mind whenever you travel locally or internationally.
-              </p>
-              <ul class="service-features">
-                <li>
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-                  <span>Emergency Medical &amp; Hospitalization Coverage</span>
-                </li>
-                <li>
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-                  <span>Schengen &amp; Embassy-Compliant Policies</span>
-                </li>
-                <li>
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-                  <span>Baggage Loss &amp; Flight Delay Protection</span>
-                </li>
-              </ul>
+              <h3 class="service-title">Travel Insurance</h3>
+              <p class="service-desc">Travel with complete peace of mind.</p>
             </div>
             <a
               href="https://wa.me/971564511167?text=Hello%20Marsham%20Tourism!%20I%20need%20a%20quote%20for%20Comprehensive%20Travel%20Insurance."
@@ -385,24 +338,8 @@
                   <path d="M16 3.13a4 4 0 0 1 0 7.75" />
                 </svg>
               </div>
-              <h3 class="service-title">Affiliate &amp; Referral Program</h3>
-              <p class="service-desc">
-                Earn commissions by referring travelers to us — simple, transparent rewards for every successful booking.
-              </p>
-              <ul class="service-features">
-                <li>
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-                  <span>Earn on Visas, Flights, Safaris &amp; Tour Packages</span>
-                </li>
-                <li>
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-                  <span>Ideal for Freelancers, PROs &amp; Community Leaders</span>
-                </li>
-                <li>
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-                  <span>Dedicated Account Support &amp; Fast Payouts</span>
-                </li>
-              </ul>
+              <h3 class="service-title">Partner With Us</h3>
+              <p class="service-desc">Refer travelers and earn rewards.</p>
             </div>
             <a
               href="https://wa.me/971564511167?text=Hello%20Marsham%20Tourism!%20I%20would%20like%20to%20join%20your%20Affiliate%20%26%20Referral%20Program."
@@ -424,11 +361,8 @@
     <section class="section bg-slate" id="packages">
       <div class="container">
         <div class="section-header">
-          <span class="section-eyebrow">Popular Selections</span>
-          <h2 class="section-title">Featured Travel &amp; Tour Packages</h2>
-          <p class="section-subtitle">
-            Explore our most requested Dubai experiences, visa bundles, and customized holiday packages. Contact us for tailored group or family rates.
-          </p>
+          <span class="section-eyebrow">Popular Picks</span>
+          <h2 class="section-title">Guest Favourites</h2>
         </div>
 
         <div class="packages-grid">
@@ -439,23 +373,9 @@
                 <span class="package-tag">Bestseller</span>
                 <span class="package-duration">6 Hours • Evening</span>
               </div>
-              <h3 class="package-banner-title">Premium Dubai Desert Safari</h3>
+              <h3 class="package-banner-title">Desert Safari</h3>
             </div>
             <div class="package-body">
-              <ul class="package-highlights">
-                <li>
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-                  <span>4x4 Pick &amp; Drop + Thrilling Red Dune Bashing</span>
-                </li>
-                <li>
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-                  <span>Camel Riding, Sandboarding &amp; Sunset Views</span>
-                </li>
-                <li>
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-                  <span>International BBQ Buffet &amp; Live Camp Shows</span>
-                </li>
-              </ul>
               <div class="package-footer">
                 <div>
                   <span class="package-price-label">Indicative From*</span>
@@ -473,23 +393,9 @@
                 <span class="package-tag">Fast Track</span>
                 <span class="package-duration">30 or 60 Days</span>
               </div>
-              <h3 class="package-banner-title">UAE Visit Visa + Insurance</h3>
+              <h3 class="package-banner-title">UAE Visit Visa</h3>
             </div>
             <div class="package-body">
-              <ul class="package-highlights">
-                <li>
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-                  <span>30-Day or 60-Day UAE Entry Permit Processing</span>
-                </li>
-                <li>
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-                  <span>Mandatory Travel Medical Insurance Included</span>
-                </li>
-                <li>
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-                  <span>Document Verification by Our Karama Team</span>
-                </li>
-              </ul>
               <div class="package-footer">
                 <div>
                   <span class="package-price-label">Indicative From*</span>
@@ -507,23 +413,9 @@
                 <span class="package-tag">All-Inclusive</span>
                 <span class="package-duration">4 Nights / 5 Days</span>
               </div>
-              <h3 class="package-banner-title">Dubai Explorer &amp; Global Getaways</h3>
+              <h3 class="package-banner-title">Dubai Getaway</h3>
             </div>
             <div class="package-body">
-              <ul class="package-highlights">
-                <li>
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-                  <span>Hotel Stay with Daily Breakfast &amp; Transfers</span>
-                </li>
-                <li>
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-                  <span>Dubai City Tour, Marina Dhow Cruise &amp; Safari</span>
-                </li>
-                <li>
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-                  <span>Customizable for Families, Couples &amp; Groups</span>
-                </li>
-              </ul>
               <div class="package-footer">
                 <div>
                   <span class="package-price-label">Indicative From*</span>
@@ -544,15 +436,12 @@
       <div class="container about-wrapper">
         <!-- Left Column: Story & Social Review Links -->
         <div>
-          <span class="section-eyebrow section-eyebrow--dark">About Marsham Tourism</span>
+          <span class="section-eyebrow section-eyebrow--dark">About Us</span>
           <h2 class="section-title section-title--light">
-            Your Trusted Travel Partner in the Heart of Karama, Dubai
+            Your Friendly Travel Partner in Karama
           </h2>
           <p class="about-lead">
-            Based in <strong>Karama, Dubai, UAE</strong>, Marsham Tourism was built on a simple promise: <em>Discover. Experience. Remember.</em> We make local and international travel effortless, reliable, and personal.
-          </p>
-          <p class="about-desc">
-            Whether you are bringing family to the UAE on a visit visa, booking urgent flight tickets home, planning an unforgettable Dubai desert safari, or crafting a dream holiday itinerary, our experienced travel consultants provide honest advice and end-to-end care.
+            <em>Discover. Experience. Remember.</em> We make every journey simple and personal.
           </p>
 
           <!-- Required Google Review & Facebook Buttons -->
@@ -596,9 +485,7 @@
               </svg>
             </div>
             <h3 class="trust-title">Face-to-Face Support</h3>
-            <p class="trust-text">
-              Visit our welcoming office in Karama, Dubai to discuss your visa or travel plans in person with real specialists.
-            </p>
+            <p class="trust-text">Visit us in Karama, Dubai.</p>
           </div>
 
           <!-- Highlight 2: Transparent rates -->
@@ -610,9 +497,7 @@
               </svg>
             </div>
             <h3 class="trust-title">Transparent Rates</h3>
-            <p class="trust-text">
-              Clear, upfront quotes on visas, flights, and holiday packages with no hidden charges or last-minute surprises.
-            </p>
+            <p class="trust-text">Clear prices. No surprises.</p>
           </div>
 
           <!-- Highlight 3: 24/7 client assistance -->
@@ -622,10 +507,8 @@
                 <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
               </svg>
             </div>
-            <h3 class="trust-title">24/7 Client Assistance</h3>
-            <p class="trust-text">
-              Responsive WhatsApp and phone support around the clock — from booking confirmation until you return home safely.
-            </p>
+            <h3 class="trust-title">24/7 Assistance</h3>
+            <p class="trust-text">Always just a WhatsApp away.</p>
           </div>
 
           <!-- Highlight 4: Strong Google Reviews rating -->
@@ -635,10 +518,8 @@
                 <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
               </svg>
             </div>
-            <h3 class="trust-title">Strong Google Reviews</h3>
-            <p class="trust-text">
-              Highly rated by travelers and UAE residents for speed, reliability, and friendly customer care.
-            </p>
+            <h3 class="trust-title">Loved by Travelers</h3>
+            <p class="trust-text">Happy guests, great reviews.</p>
           </div>
         </div>
       </div>
@@ -650,20 +531,14 @@
     <section class="section" id="contact">
       <div class="container">
         <div class="section-header">
-          <span class="section-eyebrow">Get In Touch</span>
-          <h2 class="section-title">Start Planning Your Trip Today</h2>
-          <p class="section-subtitle">
-            Reach out directly via WhatsApp, call our Karama desk, or send your travel details below for a fast, personalized quote.
-          </p>
+          <span class="section-eyebrow">Say Hello</span>
+          <h2 class="section-title">Let's Plan Your Trip</h2>
         </div>
 
         <div class="contact-grid">
           <!-- Left Column: Direct Office & Contact Info -->
           <div class="contact-info-panel">
-            <h3 class="contact-panel-title">Contact Information</h3>
-            <p class="contact-panel-subtitle">
-              Speak directly with a Marsham Tourism travel specialist in Dubai.
-            </p>
+            <h3 class="contact-panel-title">Talk to Us</h3>
 
             <div class="contact-cards">
               <!-- Office Address -->
@@ -677,7 +552,7 @@
                 <div>
                   <span class="contact-card-label">Office Address</span>
                   <div class="contact-card-value">Karama, Dubai, United Arab Emirates</div>
-                  <span class="contact-card-sub">Walk-in consultations welcome</span>
+                  <span class="contact-card-sub">Walk-ins welcome</span>
                 </div>
               </div>
 
@@ -693,7 +568,7 @@
                   <div class="contact-card-value">
                     <a href="https://wa.me/971564511167" target="_blank" rel="noopener noreferrer">+971 56 451 1167</a>
                   </div>
-                  <span class="contact-card-sub">24/7 WhatsApp &amp; direct phone line</span>
+                  <span class="contact-card-sub">24/7 on WhatsApp</span>
                 </div>
               </div>
 
@@ -710,7 +585,6 @@
                   <div class="contact-card-value">
                     <a href="mailto:marshamtourism@gmail.com">marshamtourism@gmail.com</a>
                   </div>
-                  <span class="contact-card-sub">Send documents or corporate inquiries</span>
                 </div>
               </div>
             </div>
@@ -731,10 +605,8 @@
 
           <!-- Right Column: Simple Lead Capture Form -->
           <div class="lead-form-card">
-            <h3 class="lead-form-title">Request a Free Quote</h3>
-            <p class="lead-form-subtitle">
-              Fill in your details below and our team will respond promptly with tailored options and best available rates.
-            </p>
+            <h3 class="lead-form-title">Get a Free Quote</h3>
+            <p class="lead-form-subtitle">A few details and we'll reply fast.</p>
 
             <form id="marsham-lead-form" class="form-grid" novalidate>
               <div class="form-grid form-grid--two">
@@ -771,31 +643,106 @@
                 </div>
               </div>
 
-              <div class="form-grid form-grid--two">
-                <!-- Field 3: Travel Service Needed (Dropdown: Visa, Flights, Safari, Full Package) -->
+              <!-- Field 3: Travel Service Needed (Dropdown: Visa, Flights, Safari, Full Package) -->
+              <div class="form-group">
+                <label for="lead-service" class="form-label">
+                  Travel Service Needed <span class="required">*</span>
+                </label>
+                <select id="lead-service" name="service" class="form-control" required>
+                  <option value="Visa">Visa</option>
+                  <option value="Flights">Flights</option>
+                  <option value="Safari">Safari</option>
+                  <option value="Full Package">Full Package</option>
+                </select>
+              </div>
+
+              <!-- Flight Details (shown for Flights / Full Package) -->
+              <fieldset class="form-fieldset" id="flight-fields" hidden>
+                <legend class="form-legend">Flight Details</legend>
+
+                <!-- Trip Type -->
                 <div class="form-group">
-                  <label for="lead-service" class="form-label">
-                    Travel Service Needed <span class="required">*</span>
-                  </label>
-                  <select id="lead-service" name="service" class="form-control" required>
-                    <option value="Visa">Visa</option>
-                    <option value="Flights">Flights</option>
-                    <option value="Safari">Safari</option>
-                    <option value="Full Package">Full Package</option>
-                  </select>
+                  <span class="form-label" id="trip-type-label">Trip Type</span>
+                  <div class="radio-group" role="radiogroup" aria-labelledby="trip-type-label">
+                    <label class="radio-pill">
+                      <input type="radio" name="tripType" id="trip-roundtrip" value="Round trip" checked />
+                      <span>Round trip</span>
+                    </label>
+                    <label class="radio-pill">
+                      <input type="radio" name="tripType" id="trip-oneway" value="One way" />
+                      <span>One way</span>
+                    </label>
+                  </div>
                 </div>
 
-                <!-- Field 4: Travel Dates -->
+                <!-- Location of travel + airline -->
+                <div class="form-grid form-grid--two">
+                  <div class="form-group">
+                    <label for="lead-from" class="form-label">Flying From</label>
+                    <input type="text" id="lead-from" name="from" class="form-control" placeholder="e.g., Dubai (DXB)" autocomplete="off" />
+                  </div>
+                  <div class="form-group">
+                    <label for="lead-to" class="form-label">Flying To</label>
+                    <input type="text" id="lead-to" name="to" class="form-control" placeholder="e.g., Manila (MNL)" autocomplete="off" />
+                  </div>
+                </div>
+
                 <div class="form-group">
-                  <label for="lead-dates" class="form-label">
-                    Travel Dates
+                  <label for="lead-airline" class="form-label">Preferred Airline (optional)</label>
+                  <input type="text" id="lead-airline" name="airline" class="form-control" placeholder="e.g., Emirates, Etihad, Any" autocomplete="off" />
+                </div>
+
+                <div class="form-grid form-grid--two">
+                  <!-- Baggage -->
+                  <div class="form-group">
+                    <label for="lead-baggage" class="form-label">Baggage (kg)</label>
+                    <select id="lead-baggage" name="baggage" class="form-control">
+                      <option value="None">None</option>
+                      <option value="20+ kg">20+ kg</option>
+                      <option value="30+ kg">30+ kg</option>
+                      <option value="40+ kg">40+ kg</option>
+                    </select>
+                  </div>
+
+                  <!-- Meals -->
+                  <div class="form-group">
+                    <span class="form-label" id="meals-label">Meals Included</span>
+                    <div class="radio-group" role="radiogroup" aria-labelledby="meals-label">
+                      <label class="radio-pill">
+                        <input type="radio" name="meals" id="meals-yes" value="Yes" />
+                        <span>Yes</span>
+                      </label>
+                      <label class="radio-pill">
+                        <input type="radio" name="meals" id="meals-no" value="No" checked />
+                        <span>No</span>
+                      </label>
+                    </div>
+                  </div>
+                </div>
+              </fieldset>
+
+              <!-- Field 4: Travel Dates (calendar pickers) -->
+              <div class="form-grid form-grid--two">
+                <div class="form-group">
+                  <label for="lead-depart" class="form-label" id="lead-depart-label">
+                    Departure Date
                   </label>
                   <input
-                    type="text"
-                    id="lead-dates"
-                    name="dates"
+                    type="date"
+                    id="lead-depart"
+                    name="departDate"
                     class="form-control"
-                    placeholder="e.g., 15 Nov – 22 Nov (or Flexible)"
+                  />
+                </div>
+                <div class="form-group" id="return-date-group">
+                  <label for="lead-return" class="form-label">
+                    Return Date
+                  </label>
+                  <input
+                    type="date"
+                    id="lead-return"
+                    name="returnDate"
+                    class="form-control"
                   />
                 </div>
               </div>
@@ -803,13 +750,13 @@
               <!-- Optional Field: Additional Notes -->
               <div class="form-group">
                 <label for="lead-notes" class="form-label">
-                  Additional Details (Optional)
+                  Notes (optional)
                 </label>
                 <textarea
                   id="lead-notes"
                   name="notes"
                   class="form-control"
-                  placeholder="Destination, number of travelers, nationality for visa, or special requests..."
+                  placeholder="Anything we should know?"
                 ></textarea>
               </div>
 
@@ -826,7 +773,7 @@
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
                     <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
                   </svg>
-                  <span>Fast response guaranteed via WhatsApp (+971 56 451 1167) or Email.</span>
+                  <span>We reply on WhatsApp or email.</span>
                 </div>
               </div>
 
@@ -857,9 +804,7 @@
               <span class="brand-slogan">Discover. Experience. Remember.</span>
             </span>
           </a>
-          <p class="footer-brand-desc">
-            Your reliable travel agency in Karama, Dubai, UAE. Specializing in UAE &amp; Global Visas, Flight &amp; Hotel Bookings, Desert Safaris, Custom Holiday Packages, and Travel Insurance.
-          </p>
+          <p class="footer-brand-desc">Your friendly travel partner in Karama, Dubai.</p>
           <div class="footer-socials">
             <a
               href="https://wa.me/971564511167"

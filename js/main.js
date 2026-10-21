@@ -9,6 +9,8 @@ document.addEventListener('DOMContentLoaded', () => {
   initHeroVideoFallback();
   initScrollSpy();
   initServicePrefill();
+  initQuoteCtas();
+  initFlightFields();
   initLeadForm();
   initCurrentYear();
 });
@@ -30,25 +32,46 @@ function initHeroVideoFallback() {
   if (video.readyState >= 1) applyRatio();
   video.addEventListener('loadedmetadata', applyRatio);
 
-  const conn = navigator.connection || navigator.mozConnection || navigator.webkitConnection;
-  const isLowBandwidth = Boolean(
-    conn && (conn.saveData || conn.effectiveType === 'slow-2g' || conn.effectiveType === '2g')
-  );
-
-  if (isLowBandwidth) {
-    video.pause();
-    video.classList.add('is-fallback');
-    return;
-  }
-
+  // Mobile browsers only allow autoplay for muted, inline videos. Set these
+  // as properties as well as attributes so iOS/Android always honour them.
   video.muted = true;
-  const playPromise = video.play();
-  if (playPromise !== undefined) {
-    playPromise.catch(() => {
-      // Device is in power-saving mode or blocked autoplay; fall back cleanly to BG_2026.jpg
-      video.classList.add('is-fallback');
-    });
-  }
+  video.defaultMuted = true;
+  video.loop = true;
+  video.playsInline = true;
+  video.setAttribute('playsinline', '');
+  video.setAttribute('webkit-playsinline', '');
+
+  const tryPlay = () => {
+    if (!video.paused) return;
+    const playPromise = video.play();
+    if (playPromise !== undefined) {
+      playPromise.catch(() => {
+        // Autoplay blocked (e.g. Low Power Mode): the poster stays visible and
+        // playback is retried on the next user gesture below.
+      });
+    }
+  };
+
+  tryPlay();
+  video.addEventListener('loadeddata', tryPlay);
+  video.addEventListener('canplay', tryPlay);
+
+  // Retry on first interaction (touch / scroll / click) if autoplay was blocked
+  ['touchstart', 'touchend', 'pointerdown', 'click', 'scroll', 'keydown'].forEach((evt) => {
+    window.addEventListener(evt, tryPlay, { passive: true });
+  });
+
+  // Resume when returning to the tab / restoring from background
+  document.addEventListener('visibilitychange', () => {
+    if (!document.hidden) tryPlay();
+  });
+  window.addEventListener('pageshow', tryPlay);
+
+  // Keep looping even if the browser ignores the loop attribute
+  video.addEventListener('ended', () => {
+    video.currentTime = 0;
+    tryPlay();
+  });
 
   video.addEventListener('error', () => {
     video.classList.add('is-fallback');
@@ -112,6 +135,10 @@ function initMobileDrawer() {
     });
   });
 
+  document.querySelectorAll('.drawer-cta').forEach((cta) => {
+    cta.addEventListener('click', closeDrawer);
+  });
+
   document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape' && drawer.classList.contains('is-open')) {
       closeDrawer();
@@ -168,12 +195,89 @@ function initServicePrefill() {
       const targetService = btn.getAttribute('data-select-service');
       if (targetService) {
         serviceSelect.value = targetService;
+        serviceSelect.dispatchEvent(new Event('change', { bubbles: true }));
       }
       setTimeout(() => {
         if (nameInput) nameInput.focus({ preventScroll: true });
       }, 450);
     });
   });
+}
+
+/**
+ * 4b. "Request a Quote" CTAs (header + drawer) -> scroll to the form and focus it
+ */
+function initQuoteCtas() {
+  const ctas = document.querySelectorAll('[data-quote-cta]');
+  const nameInput = document.getElementById('lead-name');
+  if (!ctas.length) return;
+
+  ctas.forEach((cta) => {
+    cta.addEventListener('click', () => {
+      setTimeout(() => {
+        if (nameInput) nameInput.focus({ preventScroll: true });
+      }, 600);
+    });
+  });
+}
+
+/**
+ * 4c. Flight fields: show for Flights / Full Package, hide return date for one-way,
+ *     and keep the calendar pickers consistent (no past dates, return >= departure)
+ */
+function initFlightFields() {
+  const serviceSelect = document.getElementById('lead-service');
+  const flightFields = document.getElementById('flight-fields');
+  const returnGroup = document.getElementById('return-date-group');
+  const departInput = document.getElementById('lead-depart');
+  const returnInput = document.getElementById('lead-return');
+  const tripRadios = document.querySelectorAll('input[name="tripType"]');
+
+  if (!serviceSelect || !flightFields || !departInput || !returnInput) return;
+
+  const toISODate = (d) => {
+    const pad = (n) => String(n).padStart(2, '0');
+    return `${d.getFullYear()}-${pad(d.getMonth() + 1)}-${pad(d.getDate())}`;
+  };
+  const today = toISODate(new Date());
+  departInput.min = today;
+  returnInput.min = today;
+
+  const isOneWay = () => {
+    const checked = document.querySelector('input[name="tripType"]:checked');
+    return !flightFields.hidden && checked && checked.value === 'One way';
+  };
+
+  const sync = () => {
+    const showFlight = ['Flights', 'Full Package'].includes(serviceSelect.value);
+    flightFields.hidden = !showFlight;
+
+    const oneWay = isOneWay();
+    if (returnGroup) returnGroup.hidden = oneWay;
+    if (oneWay) returnInput.value = '';
+  };
+
+  const syncReturnMin = () => {
+    returnInput.min = departInput.value || today;
+    if (returnInput.value && returnInput.value < returnInput.min) {
+      returnInput.value = returnInput.min;
+    }
+  };
+
+  serviceSelect.addEventListener('change', sync);
+  tripRadios.forEach((r) => r.addEventListener('change', sync));
+  departInput.addEventListener('change', syncReturnMin);
+
+  // Open the native calendar on click/focus where supported
+  [departInput, returnInput].forEach((input) => {
+    input.addEventListener('click', () => {
+      if (typeof input.showPicker === 'function') {
+        try { input.showPicker(); } catch (_) { /* ignore */ }
+      }
+    });
+  });
+
+  sync();
 }
 
 /**
@@ -191,12 +295,27 @@ function initLeadForm() {
     const name = document.getElementById('lead-name')?.value.trim() || '';
     const phone = document.getElementById('lead-phone')?.value.trim() || '';
     const service = document.getElementById('lead-service')?.value || 'Full Package';
-    const dates = document.getElementById('lead-dates')?.value.trim() || 'Flexible / To be confirmed';
     const notes = document.getElementById('lead-notes')?.value.trim() || '';
 
     if (!name || !phone) {
       return;
     }
+
+    const formatDate = (iso) => {
+      if (!iso) return '';
+      const d = new Date(`${iso}T00:00:00`);
+      return isNaN(d) ? iso : d.toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric' });
+    };
+
+    const showFlight = ['Flights', 'Full Package'].includes(service);
+    const tripType = showFlight ? (document.querySelector('input[name="tripType"]:checked')?.value || 'Round trip') : '';
+    const departDate = formatDate(document.getElementById('lead-depart')?.value);
+    const returnDate = tripType === 'One way' ? '' : formatDate(document.getElementById('lead-return')?.value);
+
+    let dates = 'Flexible / To be confirmed';
+    if (departDate && returnDate) dates = `${departDate} → ${returnDate}`;
+    else if (departDate) dates = `${departDate}${tripType === 'One way' ? ' (one way)' : ''}`;
+    else if (returnDate) dates = `Return: ${returnDate}`;
 
     const messageLines = [
       `Hello *Marsham Tourism*! 👋`,
@@ -204,9 +323,24 @@ function initLeadForm() {
       ``,
       `• *Name:* ${name}`,
       `• *Phone / WhatsApp:* ${phone}`,
-      `• *Service Needed:* ${service}`,
-      `• *Travel Dates:* ${dates}`
+      `• *Service Needed:* ${service}`
     ];
+
+    if (showFlight) {
+      const from = document.getElementById('lead-from')?.value.trim();
+      const to = document.getElementById('lead-to')?.value.trim();
+      const airline = document.getElementById('lead-airline')?.value.trim();
+      const baggage = document.getElementById('lead-baggage')?.value || 'None';
+      const meals = document.querySelector('input[name="meals"]:checked')?.value || 'No';
+
+      messageLines.push(`• *Trip Type:* ${tripType}`);
+      if (from || to) messageLines.push(`• *Route:* ${from || '—'} → ${to || '—'}`);
+      if (airline) messageLines.push(`• *Preferred Airline:* ${airline}`);
+      messageLines.push(`• *Baggage:* ${baggage}`);
+      messageLines.push(`• *Meals Included:* ${meals}`);
+    }
+
+    messageLines.push(`• *Travel Dates:* ${dates}`);
 
     if (notes) {
       messageLines.push(`• *Additional Details:* ${notes}`);
