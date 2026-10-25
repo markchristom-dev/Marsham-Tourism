@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+  <!-- Marsham Tourism brand mark: compass rose  discovery & journeys -->
+  <circle cx="12" cy="12" r="9.15" stroke="currentColor" stroke-width="2"/>
+  <path
+    fill="currentColor"
+    d="M12 3.6 14.3 10.3 20.4 12 14.3 13.7 12 20.4 9.7 13.7 3.6 12 9.7 10.3Z"
+  />
+</svg>
